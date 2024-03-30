@@ -404,14 +404,14 @@ export function validateFen(fen: string) {
   }
 
   // 11th criterion: are any pawns on the first or eighth rows?
-  if (
+ /*if (
     Array.from(rows[0] + rows[7]).some((char) => char.toUpperCase() === 'P')
   ) {
     return {
       ok: false,
       error: 'Invalid FEN: some pawns are on the edge rows',
     }
-  }
+  }*/
 
   return { ok: true }
 }
