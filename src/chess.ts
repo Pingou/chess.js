@@ -1134,6 +1134,15 @@ export class Chess {
     }
   }
 
+  movesIncludeCheck({ verbose }: { verbose?: boolean }): Move[]
+
+  movesIncludeCheck({ verbose = false }: { verbose?: boolean } = {}) {
+    const moves = this._moves({ legal: false})
+    return verbose
+      ? moves.map((move) => this._makePretty(move))
+      : moves.map((move) => this._moveToSan(move, moves))
+  }
+
   private _moves({
     legal = true,
     piece = undefined,
