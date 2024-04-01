@@ -1144,7 +1144,7 @@ export class Chess {
   }
 
 
-  uglyMoves({ verbose }: { verbose?: boolean })
+  uglyMoves({ verbose }: { verbose?: boolean }) : []
 
   uglyMoves({ verbose = false }: { verbose?: boolean } = {}) {
     const moves = this._moves({ legal: true})
