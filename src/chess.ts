@@ -1143,6 +1143,14 @@ export class Chess {
       : moves.map((move) => this._moveToSan(move, moves))
   }
 
+
+  uglyMoves({ verbose }: { verbose?: boolean })
+
+  uglyMoves({ verbose = false }: { verbose?: boolean } = {}) {
+    const moves = this._moves({ legal: true})
+    return moves
+  }
+
   private _moves({
     legal = true,
     piece = undefined,
